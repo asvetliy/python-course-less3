@@ -1,111 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Demo</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Roboto, Arial, sans-serif;
-            background: linear-gradient(135deg, #4f8cff, #6ed0ff);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            max-width: 500px;
-            text-align: center;
-        }
-
-        h1 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-
-        p {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        button {
-            background: linear-gradient(135deg, #ffb347, #ffcc33);
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .hidden-text {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f4f8ff;
-            border-left: 4px solid #4f8cff;
-            border-radius: 6px;
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 12px;
-            background: rgba(255,255,255,0.9);
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Explorer Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-<div class="card">
-    <h1>Welcome 👋</h1>
-    <p>This is a simple interactive HTML page. Click the button to reveal more information.</p>
-
-    <button onclick="showText()">Click Me</button>
-
-    <div id="extraText" class="hidden-text">
-        🎉 Congratulations! You just triggered JavaScript interaction on your web page.
-        This is how buttons can show dynamic content in web apps.
-    </div>
-</div>
-
-<footer>
-    © 2026 Alex | Python for Web
-</footer>
-
-<script>
-    function showText() {
-        const text = document.getElementById("extraText");
-        if (text.style.display === "block") {
-            text.style.display = "none";
-        } else {
-            text.style.display = "block";
-        }
-    }
-</script>
-
+  <div id="profile-card">
+    <h1 id="explorer-name" title="Double-click to rename!">Commander Alex</h1>
+    <p class="explorer-title">Astronaut in Training 🚀</p>
+    <ul class="explorer-stats">
+      <li>🪐 Favourite planet: <strong>Saturn</strong></li>
+      <li>🌙 Moon landings: <strong>0 (so far!)</strong></li>
+      <li>⭐ Skills: <strong>HTML · CSS · JavaScript</strong></li>
+    </ul>
+    <button id="launch-btn">✨ Launch Mission</button>
+    <p id="mission-status"></p>
+  </div>
 </body>
 </html>
