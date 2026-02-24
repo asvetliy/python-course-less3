@@ -10,6 +10,7 @@
             margin: 0;
             background: #f4f6f8;
             color: #333;
+            padding-bottom: 70px; /* space for fixed footer */
         }
         header {
             background: #306998;
@@ -28,9 +29,6 @@
             text-decoration: none;
             font-weight: bold;
         }
-        nav a:hover {
-            text-decoration: underline;
-        }
         main {
             max-width: 900px;
             margin: 20px auto;
@@ -39,10 +37,14 @@
             border-radius: 8px;
         }
         footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #eee;
             text-align: center;
             padding: 15px;
-            background: #eee;
-            margin-top: 20px;
+            border-top: 1px solid #ccc;
         }
         .button {
             display: inline-block;
@@ -71,11 +73,7 @@
 
 <main>
     <h2>About This Page</h2>
-    <p>
-        This is a simple HTML page created as part of a Python for Web course.
-        It demonstrates the basic structure of a web page including header,
-        navigation, content, and footer.
-    </p>
+    <p>This is a simple HTML page created as part of a Python for Web course.</p>
 
     <h2>My Goals</h2>
     <ul>
