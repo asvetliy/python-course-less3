@@ -3,91 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Python Web Page</title>
+    <title>Interactive Demo</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background: #f4f6f8;
-            color: #333;
-            padding-bottom: 70px; /* space for fixed footer */
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #4f8cff, #6ed0ff);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        header {
-            background: #306998;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background: #1f4e79;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
+
+        .card {
             background: white;
-            border-radius: 8px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            max-width: 500px;
+            text-align: center;
         }
+
+        h1 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ffb347, #ffcc33);
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .hidden-text {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f4f8ff;
+            border-left: 4px solid #4f8cff;
+            border-radius: 6px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         footer {
             position: fixed;
             bottom: 0;
-            left: 0;
             width: 100%;
-            background: #eee;
             text-align: center;
-            padding: 15px;
-            border-top: 1px solid #ccc;
-        }
-        .button {
-            display: inline-block;
-            background: #ffd43b;
-            color: #000;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
+            padding: 12px;
+            background: rgba(255,255,255,0.9);
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Welcome to My Python Web Page</h1>
-    <p>Learning web development with Python</p>
-</header>
+<div class="card">
+    <h1>Welcome 👋</h1>
+    <p>This is a simple interactive HTML page. Click the button to reveal more information.</p>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
-</nav>
+    <button onclick="showText()">Click Me</button>
 
-<main>
-    <h2>About This Page</h2>
-    <p>This is a simple HTML page created as part of a Python for Web course.</p>
-
-    <h2>My Goals</h2>
-    <ul>
-        <li>Learn HTML, CSS, and JavaScript</li>
-        <li>Build web apps with Python (Flask/Django)</li>
-        <li>Create real-world projects</li>
-    </ul>
-
-    <a class="button" href="#">View My Projects</a>
-</main>
+    <div id="extraText" class="hidden-text">
+        🎉 Congratulations! You just triggered JavaScript interaction on your web page.
+        This is how buttons can show dynamic content in web apps.
+    </div>
+</div>
 
 <footer>
-    <p>© 2026 Alex | Python for Web</p>
+    © 2026 Alex | Python for Web
 </footer>
+
+<script>
+    function showText() {
+        const text = document.getElementById("extraText");
+        if (text.style.display === "block") {
+            text.style.display = "none";
+        } else {
+            text.style.display = "block";
+        }
+    }
+</script>
 
 </body>
 </html>
